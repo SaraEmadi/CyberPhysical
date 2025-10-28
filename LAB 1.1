@@ -1,0 +1,19 @@
+// Exercise 1.1 - Digital and Analog I/O
+const int LED_PIN = 6;   // LED on D6
+const int POT_PIN = A1;  // Potentiometer on A1
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);  // Turn LED ON
+  delay(500);
+  digitalWrite(LED_PIN, LOW);   // Turn LED OFF
+  delay(500);
+
+  int value = analogRead(POT_PIN);  // Read analog input
+  Serial.print("Analog A1 value: ");
+  Serial.println(value);
+}
